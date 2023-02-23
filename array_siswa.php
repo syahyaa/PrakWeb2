@@ -34,7 +34,7 @@ $ar_nilai = [$ns1,$ns2,$ns3];
         echo '<td>' .number_format($nilai_akhir) .'</td>';
         echo '<tr/>';
         $nomor++;
-    };
+    }
     ?>
 </tbody>
 </table>
