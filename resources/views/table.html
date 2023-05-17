@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tabel dengan Garis</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 70%;
+      justify-content: center;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+  </style> 
+  <table>
+    <tr>
+        <thead>
+                <th>Jenis Tes</th>
+                <th>Hasil Pemeriksaan </th>
+                <th>Normal</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tekanan Darah</td>
+                <td></td>
+                <td>mmhg</td>
+            </tr>
+            <tr>
+                <td>Asam Urat</td>
+                <td></td>
+                <td>pria : {{$pria}} | wanita : {{$wanita}} </td>
+            </tr>
+            <tr>
+                <td>Kolestrol Total</td>
+                <td></td>
+                <td>mg/dl</td>
+            </tr>
+            <tr>
+                <td rowspan="3">Gula Darah</td>
+                <td rowspan="3"></td>
+                <td>Puasa : {{$puasa}} mg/dl</td>
+            </tr>
+            <tr>
+                <td>2 jam setelah makan : {{$obat}}</td>
+            </tr>
+            <tr>
+                <td>Sewaktu/acak : {{$acak}} mg/dl</td>
+            </tr>
+        </tbody>
+    </tr>
+</table>
+
+ <!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Tabel dengan Garis</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style> 
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>Nama</th>
+    <th>Usia</th>
+    <th>Alamat</th>
+  </tr>
+  <tr>
+    <td>John Doe</td>
+    <td>25</td>
+    <td>Jakarta</td>
+  </tr>
+  <tr>
+    <td>Jane Smith</td>
+    <td>30</td>
+    <td>Bandung</td>
+  </tr>
+  <tr>
+    <td>Bob Johnson</td>
+    <td>35</td>
+    <td>Surabaya</td>
+  </tr>
+  <tr>
+    <td>Sarah Brown</td>
+    <td>28</td>
+    <td>Medan</td>
+  </tr>
+  <tr>
+    <td>David Lee</td>
+    <td>32</td>
+    <td>Yogyakarta</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Malang</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Bali</td>
+  </tr>
+</table>
+
+</body>
+</html> -->
