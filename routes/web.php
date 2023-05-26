@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\FromController;
+// use Illuminate\Support\Facades\DashboardController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProdukController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -55,3 +61,30 @@ Route::get('/table', function () {
 
 });
 
+// Route::get('/input', function () {
+//     return view('input');
+// });
+
+// Route::get('/output', function () {
+//     return view('output');
+// });
+
+Route::get('/input', [UserController::class, 'index']);
+
+Route::post('/output', [UserController::class, 'output']);
+
+Route::post('/from', [FromController::class, 'index']);
+Route::post('/from', [FromController::class, 'from']);
+
+
+// ini route untuk backend/admin
+Route::prefix('admin')->group(function() {
+Route::get('/dashboard',[DashboardController::class,'index']);
+Route::get('/produk',[ProdukController::class,'index']);
+});
+
+// ini route untuk frontend
+
+// Route::get('/from', function () {
+//     return view('from');
+// });
