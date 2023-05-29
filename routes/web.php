@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FromController;
 // use Illuminate\Support\Facades\DashboardController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardFrontendController;
+
 use App\Http\Controllers\ProdukController;
 
 
@@ -84,7 +86,6 @@ Route::get('/produk',[ProdukController::class,'index']);
 });
 
 // ini route untuk frontend
-
-// Route::get('/from', function () {
-//     return view('from');
-// });
+Route::prefix('user')->group(function() {
+    Route::get('/dashboard',[DashboardFrontendController::class,'index']);
+    });
