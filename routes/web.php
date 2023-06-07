@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FromController;
-// use Illuminate\Support\Facades\DashboardController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardFrontendController;
-
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\PesananController;
+
 
 
 /*
@@ -83,9 +83,12 @@ Route::post('/from', [FromController::class, 'from']);
 Route::prefix('admin')->group(function() {
 Route::get('/dashboard',[DashboardController::class,'index']);
 Route::get('/produk',[ProdukController::class,'index']);
+Route::get('/pesanan', [PesananController::class, 'index']);
 });
 
 // ini route untuk frontend
 Route::prefix('user')->group(function() {
     Route::get('/dashboard',[DashboardFrontendController::class,'index']);
     });
+
+//
