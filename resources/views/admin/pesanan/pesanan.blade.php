@@ -14,8 +14,8 @@
 
     <div class="card mb-4">
         <div class="card-header">
-            <i class="fas fa-table me-1"></i>
-            Data Pesanan
+            {{-- <i class="fas fa-table me-1">Data Pesanan</i> --}}
+            <a href="{{url('admin/pesanan/create')}}">Tambah Pesanan</a> 
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
@@ -38,7 +38,6 @@
                     @endphp
                     @foreach ($pesanan as $pes)
                     <tr>
-                        <td>{{ $no }}</td>
                         <td>{{ $pes->tanggal }}</td>
                         <td>{{ $pes->nama_pemesan }}</td>
                         <td>{{ $pes->alamat_pemesan }}</td>
@@ -47,6 +46,9 @@
                         <td>{{ $pes->jumlah_pesanan }}</td>
                         <td>{{ $pes->deskripsi }}</td>
                         <td>{{ $pes->nama_produk}}</td>
+                        <td><a href="{{ url('admin/pesanan/edit/'. $pes->id) }}" class="btn btn-success">Edit</a></td>
+                        <td><a href="{{ url('admin/pesanan/delete/'. $pes->id) }}" class="btn btn-danger">Delete</a></td>
+                    </td>
                     </tr>
                     @php
                         $no++

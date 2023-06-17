@@ -14,9 +14,9 @@
         </ol>
         <div class="card mb-4">
             <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                Data Produk
-            </div>
+                {{-- <i class="fas fa-table me-1">Data Produk</i> --}}
+               <a href="{{url('admin/produk/create')}}">Tambah Data</a>  
+            </div>         
             <div class="card-body">
                 <table id="datatablesSimple">
                     <thead>
@@ -30,6 +30,7 @@
                             <th>Minimal Stok</th>
                             <th>Deskripsi</th>
                             <th>Kategori Produk</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,7 +38,7 @@
                             $no = 1;
                         @endphp
                         @foreach ($produk as $prod)
-                        <tr>
+                        <tr >
                             <td>{{ $no }}</td>
                             <td>{{ $prod->kode }}</td>
                             <td>{{ $prod->nama }}</td>
@@ -47,6 +48,8 @@
                             <td>{{ $prod->min_stok }}</td>
                             <td>{{ $prod->deskripsi }}</td>
                             <td>{{ $prod->nama_kategori }}</td>
+                            <td><a href="{{ url('admin/produk/edit/'. $prod->id) }}" class="btn btn-success">Edit</a></td>
+                            <td><a href="{{ url('admin/produk/delete/'. $prod->id) }}" class="btn btn-danger">Delete</a></td>
                         </tr>
                         @php
                             $no++
