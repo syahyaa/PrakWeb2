@@ -5,5 +5,5 @@
 {{-- halaman dashboard adalah anak dari si parent/orangtua --}}
 {{-- @section('dashboard')   --}}
 @section('content')  
-{{-- <h1 style="text-align: center">Ini Adalah Halaman Dashboard</h1> --}}
+<h1 style="text-align: center">Ini Adalah Halaman Dashboard</h1>
 @endsection

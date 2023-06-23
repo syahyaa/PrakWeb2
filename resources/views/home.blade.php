@@ -3,21 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+        <h3 style="text-align: center">Selamat{{ Auth::user()->name }} Berhasil Melakukan Registrasi </h3>
+        <h5 style="text-align: center">Silahkan Logout & login kembali untuk masuk ke dashboard admin</h5>
     </div>
 </div>
 @endsection

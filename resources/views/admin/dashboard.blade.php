@@ -5,5 +5,7 @@
 {{-- halaman dashboard adalah anak dari si parent/orangtua --}}
 {{-- @section('dashboard')   --}}
 @section('content')  
+<h3 style="text-align: center">Hallo{{Auth::user()->name}}</h3>
 <h1 style="text-align: center">Ini Adalah Halaman Dashboard</h1>
+
 @endsection

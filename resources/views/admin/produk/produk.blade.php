@@ -14,8 +14,10 @@
         </ol>
         <div class="card mb-4">
             <div class="card-header">
+            @if (Auth::user()->role != 'pelanggan')
                 {{-- <i class="fas fa-table me-1">Data Produk</i> --}}
                <a href="{{url('admin/produk/create')}}">Tambah Data</a>  
+            @endif
             </div>         
             <div class="card-body">
                 <table id="datatablesSimple">
@@ -49,7 +51,9 @@
                             <td>{{ $prod->deskripsi }}</td>
                             <td>{{ $prod->nama_kategori }}</td>
                             <td><a href="{{ url('admin/produk/edit/'. $prod->id) }}" class="btn btn-success">Edit</a></td>
+                        @if (Auth::user()->role == 'admin')
                             <td><a href="{{ url('admin/produk/delete/'. $prod->id) }}" class="btn btn-danger">Delete</a></td>
+                        @endif
                         </tr>
                         @php
                             $no++
@@ -61,4 +65,7 @@
         </div>
     </div>
 </main>
+@if
+    @include('admin.acces_denied')
+@else
 @endsection

@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardFrontendController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PesananController;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -80,7 +81,9 @@ Route::post('/from', [FromController::class, 'from']);
 
 
 // ini route untuk backend/admin
+Route::group(['middlwere' => ['auth','peran:admin-manager']], function(){
 Route::prefix('admin')->group(function() {
+
 Route::get('/dashboard',[DashboardController::class,'index']);
 
 //produk
@@ -90,6 +93,7 @@ Route::post('/produk/store', [ProdukController::class, 'store']);
 Route::get('/produk/edit/{id}',[ProdukController::class, 'edit']);
 Route::post('/produk/update/{id}',[ProdukController::class, 'update']);
 Route::get('/produk/delete/{id}',[ProdukController::class, 'destroy']);
+Route::get('/logout',[DashboardController::class, 'logout']);
 
 //pesanan
 Route::get('/pesanan', [PesananController::class, 'index']);
@@ -99,6 +103,7 @@ Route::get('/pesanan/edit/{id}',[PesananController::class, 'edit']);
 Route::post('/pesanan/update/{id}', [PesananController::class, 'update']);
 Route::get('/pesanan/delete/{id}', [PesananController::class, 'destroy']);
 
+});
 });
 
 // ini route untuk frontend
